@@ -67,3 +67,44 @@ $('a[href*="#"]').on('click', function (e) {
         scrollTop: $($(this).attr('href')).offset().top - 100
     }, 500);
 });
+
+
+// Success Popup
+const form = document.getElementById("contact-form");
+const popup = document.getElementById("success-popup");
+
+// Ensure popup is hidden on page load
+popup.style.display = "none";
+
+// Handle form submit
+form.addEventListener("submit", function (e) {
+    e.preventDefault();     // STOP REDIRECT
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+            "Accept": "application/json"
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            sessionStorage.setItem("formSubmitted", "true"); // mark submission
+            popup.style.display = "flex";
+            form.reset();
+        } else {
+            alert("Failed to send message. Please try again.");
+        }
+    })
+    .catch(() => {
+        alert("Network error. Please try later.");
+    });
+});
+
+// Close popup & clear flag
+function closePopup() {
+    popup.style.display = "none";
+    sessionStorage.removeItem("formSubmitted");
+}

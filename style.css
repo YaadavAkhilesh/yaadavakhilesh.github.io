@@ -560,7 +560,12 @@ span {
     color: var(--second-bg-color);
 }
 
+
+
+
+
 /* Responsive */
+
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
@@ -731,6 +736,10 @@ span {
     }
 }
 
+
+
+
+
 /* Scroll Animation */
 .animate {
     opacity: 0;
@@ -754,4 +763,41 @@ span {
     font-size: 1.4rem;
     text-align: center;
     padding: 2rem;
+}
+
+
+/* Success Popup */
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background: #1f242d;
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+.popup-content h3 {
+    color: #0ef;
+}
+
+.popup-content button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: none;
+    background: #0ef;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
 }
