@@ -113,7 +113,7 @@
 
             <div class="skills-box">
                 <i class="fas fa-chart-line"></i>
-                <h3>Data Analysis & Viz</h3>
+                <h3>Data Analysis & Visualization</h3>
                 <div class="skills-list">
                     <span class="skill-tag">EDA</span>
                     <span class="skill-tag">Matplotlib</span>
@@ -167,10 +167,19 @@
                         <div class="content">
                             <div class="year"><i class="fas fa-calendar-alt"></i> 2022</div>
                             <h3>Higher Secondary (12th)</h3>
-                            <p>Science Stream</p>
+                            <p>Commerce Stream</p>
                             <p><strong>Percentage:</strong> 90.71%</p>
                         </div>
                     </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class="fas fa-calendar-alt"></i> 2020</div>
+                            <h3>Secondary (10th)</h3>
+                            <p><strong>Percentage:</strong> 75%</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
@@ -257,16 +266,25 @@
     <section class="contact" id="contact">
         <h2 class="heading">Get In <span>Touch!</span></h2>
 
-        <form action="#" class="animate">
+        <form action="https://formspree.io/f/meejdzzb" method="POST" class="animate">
+            
+            <!-- OPTIONAL: Email subject -->
+            <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+            <!-- _subject ----------- Sets the email subject you receive -->
+
+            <!-- OPTIONAL: Email format -->
+            <input type="hidden" name="_template" value="table">
+            <!-- _template ------------ Makes the email clean & readable in table format -->
+
             <div class="input-box">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email"name="email" placeholder="Email Address" required>
             </div>
             <div class="input-box">
-                <input type="tel" placeholder="Mobile Number">
-                <input type="text" placeholder="Subject">
+                <input type="tel" name="phone" placeholder="Mobile Number">
+                <input type="text" name="subject" placeholder="Subject">
             </div>
-            <textarea cols="30" rows="10" placeholder="Your Message" required></textarea>
+            <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
             <input type="submit" value="Send Message" class="btn">
         </form>
 
